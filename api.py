@@ -16,7 +16,7 @@ text_series = load('./data/text_series.joblib')
 df = pd.read_json('./data/products.json', orient='records')
 
 app = Flask(__name__)
-cors = CORS(app, resources={r"/api/*": {"origins": URL_CLIENT}})
+cors = CORS(app, resources={r"/api/*": {"origins": "*"}})
 
 @app.route('/api/results', methods=['POST'])
 def get_results():
